@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 11:04:00 by ldermign          #+#    #+#             */
-/*   Updated: 2021/10/27 10:19:42 by ldermign         ###   ########.fr       */
+/*   Updated: 2021/10/27 13:21:47 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int ac, char **av)
 		ft_putstr("Wrong number of arguments.\n");
 		return (0);
 	}
-	if (av[2] == '\0')
+	if (av[2][0] == '\0')
 		return (0);
 	pid_server = ft_atoi(av[1]);
 	convert_ascii_to_binary(av[2], pid_server);

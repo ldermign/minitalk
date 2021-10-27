@@ -6,7 +6,7 @@
 /*   By: ldermign <ldermign@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 13:25:29 by ldermign          #+#    #+#             */
-/*   Updated: 2021/10/25 11:56:46 by ldermign         ###   ########.fr       */
+/*   Updated: 2021/10/27 13:24:07 by ldermign         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*join_dst_and_buffer(char *dst, char *str, int c)
 
 	tmp = dst;
 	dst = ft_strjoin(dst, str);
+	if (dst == NULL)
+		return (NULL);
 	free(tmp);
 	ft_memset(str, '\0', BUFSIZ);
 	if (c == 0)
@@ -51,8 +53,8 @@ void	return_binary(int sig)
 	static int	tab[2];
 	int			c;
 
-	buffer[8] = '\0';
-	str[BUFSIZ - 1] = '\0';
+	ft_memset(buffer, '\0', 9);
+	ft_memset(str, '\0', BUFSIZ);
 	if (sig == SIGUSR1)
 		buffer[tab[1]] = '1';
 	else if (sig == SIGUSR2)
